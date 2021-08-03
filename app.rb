@@ -14,10 +14,17 @@ get '/test' do
   'oooh test page!'
 end
 
-get '/cat' do
+get '/random-cat' do
   "
   <div style='border: 3px dashed red'>
-  <<img src='http://placekitten.com/500/500'>
+  <img src='http://placekitten.com/500/500'>
   </div>
   "
+end
+
+get '/named-cat' do
+
+  p params
+  @name = params[:name]
+  erb(:catform)
 end
